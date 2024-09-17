@@ -34,6 +34,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+app.get("/", (req, res) => {
+  res.json({ message: "Backend Running successfully" });
+});
+
 async function createUser(newUser) {
   try {
     const users = new User(newUser);
