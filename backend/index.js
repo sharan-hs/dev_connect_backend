@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const db = require("../backend/config/db");
+const db = require("./config/db");
 const User = require("./models/User");
 const Post = require("./models/Post");
 const app = express();
@@ -16,9 +16,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 const cors = require("cors");
-const isAuthenticated = require("../backend/config/auth");
+const isAuthenticated = require("./config/auth");
 
-const upload = require("../backend/utils/multer");
+const upload = require("./utils/multer");
 const cloudinary = require("cloudinary").v2;
 
 // Configure Cloudinary
